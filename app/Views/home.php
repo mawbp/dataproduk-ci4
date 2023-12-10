@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Data Produk</title>
   <link rel="stylesheet" href="<?= BASE; ?>writable/assets/css/style.css">
   <link rel="stylesheet" href="<?= BASE; ?>writable/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= BASE; ?>writable/assets/css/dataTables.bootstrap5.min.css">
