@@ -1,0 +1,114 @@
+CRITICAL - 2023-11-28 10:41:59 --> Call to undefined function BASE()
+in APPPATH\Views\home.php on line 7.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('home', [], true)
+ 4 APPPATH\Controllers\Home.php(9): view('home')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-28 10:46:31 --> Call to undefined function BASEURLKU()
+in APPPATH\Views\home.php on line 7.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('home', [], true)
+ 4 APPPATH\Controllers\Home.php(9): view('home')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-28 10:46:45 --> Call to undefined function BASEURLKU()
+in APPPATH\Views\home.php on line 7.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('home', [], true)
+ 4 APPPATH\Controllers\Home.php(9): view('home')
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-28 14:38:38 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', '', '', '', 3306, '', 0)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM p...')
+#4 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM p...')
+#3 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+#4 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-11-28 14:38:38 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\Mdata.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM product')
+ 3 APPPATH\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-28 14:38:52 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', '', '', '', 3306, '', 0)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM p...')
+#4 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM p...')
+#3 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+#4 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-11-28 14:38:52 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\Mdata.php(9): CodeIgniter\Database\BaseConnection->query('SELECT * FROM product')
+ 3 APPPATH\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-28 14:40:11 --> Undefined variable $dt
+in APPPATH\Models\Mdata.php on line 10.
+ 1 APPPATH\Models\Mdata.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dt', 'C:\\xampp\\htdocs\\website-produk\\app\\Models\\Mdata.php', 10)
+ 2 APPPATH\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-28 14:40:16 --> Undefined variable $dt
+in APPPATH\Models\Mdata.php on line 10.
+ 1 APPPATH\Models\Mdata.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dt', 'C:\\xampp\\htdocs\\website-produk\\app\\Models\\Mdata.php', 10)
+ 2 APPPATH\Controllers\Home.php(17): App\Models\Mdata->getProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

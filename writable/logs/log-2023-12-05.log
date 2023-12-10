@@ -1,0 +1,182 @@
+CRITICAL - 2023-12-05 08:56:52 --> Undefined array key "product_id"
+in APPPATH\Controllers\Home.php on line 27.
+ 1 APPPATH\Controllers\Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_id"', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 27)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 08:57:19 --> Undefined array key "product_id"
+in APPPATH\Controllers\Home.php on line 27.
+ 1 APPPATH\Controllers\Home.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "product_id"', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 27)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 10:36:29 --> syntax error, unexpected variable "$protected", expecting "function" or "const"
+in APPPATH\Controllers\Home.php on line 9.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 10:37:39 --> syntax error, unexpected variable "$dt"
+in APPPATH\Models\Mdata.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\dataproduk\\app\\Models\\Mdata.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Mdata')
+ 3 APPPATH\Controllers\Home.php(13): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Mdata')
+ 4 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Home->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 10:39:39 --> Class "App\Models\Mdata" not found
+in APPPATH\Controllers\Home.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\Home->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 10:51:44 --> Class "App\Controllers\Mdata" not found
+in APPPATH\Controllers\BaseController.php on line 59.
+ 1 SYSTEMPATH\CodeIgniter.php(915): App\Controllers\BaseController->initController(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), Object(CodeIgniter\Log\Logger))
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 10:52:19 --> Undefined property: App\Controllers\Home::$Mdata
+in APPPATH\Controllers\Home.php on line 25.
+ 1 APPPATH\Controllers\Home.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$Mdata', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 11:17:10 --> syntax error, unexpected token "echo"
+in APPPATH\Controllers\Api.php on line 19.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Api.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Api')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Api')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Api', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-05 13:52:13 --> mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO bar...', 0)
+#1 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO bar...')
+#2 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO bar...')
+#3 C:\xampp\htdocs\dataproduk\app\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO bar...')
+#4 C:\xampp\htdocs\dataproduk\app\Controllers\Home.php(114): App\Models\Mdata->addProduct('1', 'asdasd', '12313', '1213', '04', '07', 'wsdaqsdaddddddd...')
+#5 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dataproduk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-12-05 13:52:13 --> Column count doesn't match value count at row 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO barang VALUES(\'1\',\'asdasd\',\'12313\',\'1213\',\'04\',\'07\',\'wsdaqsdadddddddddddwasdxca\')')
+ 2 APPPATH\Controllers\Home.php(114): App\Models\Mdata->addProduct('1', 'asdasd', '12313', '1213', '04', '07', 'wsdaqsdadddddddddddwasdxca')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-05 13:52:28 --> mysqli_sql_exception: Column count doesn't match value count at row 1 in C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO bar...', 0)
+#1 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO bar...')
+#2 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO bar...')
+#3 C:\xampp\htdocs\dataproduk\app\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO bar...')
+#4 C:\xampp\htdocs\dataproduk\app\Controllers\Home.php(114): App\Models\Mdata->addProduct('1', 'asdasd', '12313', '1213', '04', '07', 'wsdaqsdaddddddd...')
+#5 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dataproduk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-12-05 13:52:28 --> Column count doesn't match value count at row 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO barang VALUES(\'1\',\'asdasd\',\'12313\',\'1213\',\'04\',\'07\',\'wsdaqsdadddddddddddwasdxca\')')
+ 2 APPPATH\Controllers\Home.php(114): App\Models\Mdata->addProduct('1', 'asdasd', '12313', '1213', '04', '07', 'wsdaqsdadddddddddddwasdxca')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-05 14:00:27 --> mysqli_sql_exception: Duplicate entry '3' for key 'PRIMARY' in C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO bar...', 0)
+#1 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO bar...')
+#2 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO bar...')
+#3 C:\xampp\htdocs\dataproduk\app\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO bar...')
+#4 C:\xampp\htdocs\dataproduk\app\Controllers\Home.php(114): App\Models\Mdata->addProduct('3', 'wqqqqqqqq', '121', '212', '04', '04', 'ddd')
+#5 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dataproduk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-12-05 14:00:27 --> Duplicate entry '3' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO barang VALUES(\'3\',\'wqqqqqqqq\',\'121\',\'212\',\'04\',\'04\',\'ddd\',\'\')')
+ 2 APPPATH\Controllers\Home.php(114): App\Models\Mdata->addProduct('3', 'wqqqqqqqq', '121', '212', '04', '04', 'ddd')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 14:13:07 --> Undefined variable $message
+in APPPATH\Controllers\BaseController.php on line 65.
+ 1 APPPATH\Controllers\BaseController.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $message', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\BaseController.php', 65)
+ 2 APPPATH\Controllers\Home.php(116): App\Controllers\BaseController->setResponse(true, 'Data Berhasil Ditambahkan')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-05 14:14:37 --> mysqli_sql_exception: Duplicate entry '4' for key 'PRIMARY' in C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO bar...', 0)
+#1 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO bar...')
+#2 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO bar...')
+#3 C:\xampp\htdocs\dataproduk\app\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO bar...')
+#4 C:\xampp\htdocs\dataproduk\app\Controllers\Home.php(114): App\Models\Mdata->addProduct('4', 'popo', '0234', '2834', '02', '05', 'asdasd')
+#5 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dataproduk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-12-05 14:14:37 --> Duplicate entry '4' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO barang VALUES(\'4\',\'popo\',\'0234\',\'2834\',\'02\',\'05\',\'asdasd\',\'\')')
+ 2 APPPATH\Controllers\Home.php(114): App\Models\Mdata->addProduct('4', 'popo', '0234', '2834', '02', '05', 'asdasd')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 14:24:28 --> Undefined variable $dt
+in APPPATH\Controllers\Home.php on line 122.
+ 1 APPPATH\Controllers\Home.php(122): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dt', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 122)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->getProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-05 14:24:58 --> Undefined property: stdClass::$qr
+in APPPATH\Controllers\Home.php on line 128.
+ 1 APPPATH\Controllers\Home.php(128): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$qr', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 128)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->getProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-05 22:48:27 --> mysqli_sql_exception: Table 'db_pos.kategor' doesn't exist in C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT br.id, b...', 0)
+#1 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT br.id, b...')
+#2 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT br.id, b...')
+#3 C:\xampp\htdocs\dataproduk\app\Models\Mdata.php(18): CodeIgniter\Database\BaseConnection->query('SELECT br.id, b...')
+#4 C:\xampp\htdocs\dataproduk\app\Controllers\Home.php(121): App\Models\Mdata->getProduct('1')
+#5 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(942): App\Controllers\Home->getProduct()
+#6 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dataproduk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-12-05 22:48:28 --> Table 'db_pos.kategor' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(18): CodeIgniter\Database\BaseConnection->query('SELECT br.id, br.nama, hargabeli, hargajual, sat.nama AS satuan, kat.nama AS kategori, qr FROM barang AS br LEFT JOIN satuan AS sat ON br.id_satuan = sat.id LEFT JOIN kategor AS kat ON br.id_kategori = kat.id WHERE br.id = \'1\'')
+ 2 APPPATH\Controllers\Home.php(121): App\Models\Mdata->getProduct('1')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->getProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

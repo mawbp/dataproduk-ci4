@@ -1,0 +1,54 @@
+CRITICAL - 2023-12-06 02:05:43 --> syntax error, unexpected token ";", expecting "]"
+in APPPATH\Controllers\Home.php on line 215.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 02:20:38 --> syntax error, unexpected token "}"
+in APPPATH\Controllers\Home.php on line 150.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 02:23:50 --> Undefined variable $nama
+in APPPATH\Controllers\Home.php on line 227.
+ 1 APPPATH\Controllers\Home.php(227): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $nama', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 227)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-06 03:04:54 --> syntax error, unexpected token ","
+in APPPATH\Controllers\Home.php on line 225.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Home')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Home')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\Home', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-06 03:05:32 --> mysqli_sql_exception: Unknown column 'qrcode' in 'field list' in C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\dataproduk\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE barang S...', 0)
+#1 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE barang S...')
+#2 C:\xampp\htdocs\dataproduk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE barang S...')
+#3 C:\xampp\htdocs\dataproduk\app\Models\Mdata.php(32): CodeIgniter\Database\BaseConnection->query('UPDATE barang S...')
+#4 C:\xampp\htdocs\dataproduk\app\Controllers\Home.php(233): App\Models\Mdata->updateProduct('3', 'qw', '1212', '4232', '01', '03', 'qweqewq')
+#5 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+#6 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\dataproduk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\dataproduk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-12-06 03:05:32 --> Unknown column 'qrcode' in 'field list'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(32): CodeIgniter\Database\BaseConnection->query('UPDATE barang SET nama = \'qw\', hargabeli = \'1212\', hargajual = \'4232\', id_satuan = \'01\', id_kategori = \'03\', qrcode = \'qweqewq\' WHERE id = \'3\'')
+ 2 APPPATH\Controllers\Home.php(233): App\Models\Mdata->updateProduct('3', 'qw', '1212', '4232', '01', '03', 'qweqewq')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

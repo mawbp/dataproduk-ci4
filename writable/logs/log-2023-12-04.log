@@ -1,0 +1,20 @@
+CRITICAL - 2023-12-04 12:05:03 --> Undefined variable $filepath
+in APPPATH\Controllers\Home.php on line 112.
+ 1 APPPATH\Controllers\Home.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filepath', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 112)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-04 12:05:43 --> Undefined variable $filepath
+in APPPATH\Controllers\Home.php on line 112.
+ 1 APPPATH\Controllers\Home.php(112): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $filepath', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 112)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-04 12:07:01 --> Call to a member function move() on string
+in APPPATH\Controllers\Home.php on line 102.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

@@ -1,0 +1,86 @@
+CRITICAL - 2023-12-08 00:53:03 --> unlink(writable/uploads2423.jpg): No such file or directory
+in APPPATH\Controllers\Home.php on line 265.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(writable/uploads2423.jpg): No such file or directory', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 265)
+ 2 APPPATH\Controllers\Home.php(265): unlink('writable/uploads2423.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 00:53:49 --> unlink(writable/uploads/2424.jpg): No such file or directory
+in APPPATH\Controllers\Home.php on line 265.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(writable/uploads/2424.jpg): No such file or directory', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 265)
+ 2 APPPATH\Controllers\Home.php(265): unlink('writable/uploads/2424.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 01:38:54 --> unlink(writable/uploads/4.jpg): No such file or directory
+in APPPATH\Controllers\Home.php on line 278.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(writable/uploads/4.jpg): No such file or directory', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 278)
+ 2 APPPATH\Controllers\Home.php(278): unlink('writable/uploads/4.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->deleteProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 01:39:10 --> unlink(writable/uploads/4.jpg): No such file or directory
+in APPPATH\Controllers\Home.php on line 278.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(writable/uploads/4.jpg): No such file or directory', 'C:\\xampp\\htdocs\\dataproduk\\app\\Controllers\\Home.php', 278)
+ 2 APPPATH\Controllers\Home.php(278): unlink('writable/uploads/4.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->deleteProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:03:24 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:03:34 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:04:12 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:04:40 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:05:35 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:05:36 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:05:38 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:06:31 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-08 03:07:23 --> Call to a member function getError() on null
+in APPPATH\Controllers\Api.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Api->tambah()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

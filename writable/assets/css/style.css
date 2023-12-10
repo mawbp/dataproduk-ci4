@@ -1,0 +1,14 @@
+body { background: rgba(255, 255, 255, 0.9) url('../img/paisley.webp');}
+.rata-tengah { text-align: center; }
+.center { display: block;margin-left: auto;margin-right: auto;width: 75%; }
+.w100 { width: 100%; }
+.w5 { width: 5%; }
+.w10 { width: 10%; }
+.w15 { width: 15%; }
+.w20 { width: 20%; }
+.w25 { width: 25%; }
+.w30 { width: 30%; }
+.w35 { width: 35%; }
+.w40 { width: 40%; }
+.fs20 { font-size: 20px; }
+.fs13 { font-size: 13px; }

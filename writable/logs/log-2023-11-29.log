@@ -1,0 +1,154 @@
+CRITICAL - 2023-11-29 04:23:35 --> Undefined property: App\Controllers\Home::$result
+in APPPATH\Controllers\Home.php on line 38.
+ 1 APPPATH\Controllers\Home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$result', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-29 04:24:04 --> Undefined property: App\Controllers\Home::$result
+in APPPATH\Controllers\Home.php on line 38.
+ 1 APPPATH\Controllers\Home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Home::$result', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 38)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-29 04:25:11 --> Undefined constant "App\Models\db_connect"
+in APPPATH\Models\Mdata.php on line 15.
+ 1 APPPATH\Controllers\Home.php(39): App\Models\Mdata->addProduct(null, null, null, null, null)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-29 04:27:00 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO pro...', 0)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO pro...')
+#2 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO pro...')
+#3 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO pro...')
+#4 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(39): App\Models\Mdata->addProduct(NULL, NULL, NULL, NULL, NULL)
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-29 04:27:00 --> Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO product VALUES(\'\', \'\', \'\', \'\', \'\')')
+ 2 APPPATH\Controllers\Home.php(39): App\Models\Mdata->addProduct(null, null, null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-29 04:27:30 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO pro...', 0)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO pro...')
+#2 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO pro...')
+#3 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO pro...')
+#4 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(39): App\Models\Mdata->addProduct(NULL, NULL, NULL, NULL, NULL)
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-29 04:27:30 --> Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO product VALUES(\'\', \'\', \'\', \'\', \'\')')
+ 2 APPPATH\Controllers\Home.php(39): App\Models\Mdata->addProduct(null, null, null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-29 04:29:19 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO pro...', 0)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO pro...')
+#2 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO pro...')
+#3 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO pro...')
+#4 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(39): App\Models\Mdata->addProduct(NULL, NULL, NULL, NULL, NULL)
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-29 04:29:19 --> Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO product VALUES(\'\', \'\', \'\', \'\', \'\')')
+ 2 APPPATH\Controllers\Home.php(39): App\Models\Mdata->addProduct(null, null, null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-29 04:31:27 --> mysqli_sql_exception: Duplicate entry '0' for key 'PRIMARY' in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php(306): mysqli->query('INSERT INTO pro...', 0)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO pro...')
+#2 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO pro...')
+#3 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO pro...')
+#4 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(39): App\Models\Mdata->addProduct(NULL, NULL, NULL, NULL, NULL)
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-29 04:31:27 --> Duplicate entry '0' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(15): CodeIgniter\Database\BaseConnection->query('INSERT INTO product VALUES(\'\', \'\', \'\', \'\', \'\')')
+ 2 APPPATH\Controllers\Home.php(39): App\Models\Mdata->addProduct(null, null, null, null, null)
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-29 10:34:11 --> Undefined variable $kode
+in APPPATH\Controllers\Home.php on line 46.
+ 1 APPPATH\Controllers\Home.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kode', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->getProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-29 10:34:46 --> Undefined variable $kode
+in APPPATH\Controllers\Home.php on line 46.
+ 1 APPPATH\Controllers\Home.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $kode', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 46)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->getProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-29 10:35:33 --> Undefined variable $hasil
+in APPPATH\Controllers\Home.php on line 48.
+ 1 APPPATH\Controllers\Home.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $hasil', 'C:\\xampp\\htdocs\\website-produk\\app\\Controllers\\Home.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->getProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-11-29 11:54:12 --> mysqli_sql_exception: Duplicate entry '1' for key 'PRIMARY' in C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\website-produk\system\Database\MySQLi\Connection.php(306): mysqli->query('UPDATE product ...', 0)
+#1 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE product ...')
+#2 C:\xampp\htdocs\website-produk\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE product ...')
+#3 C:\xampp\htdocs\website-produk\app\Models\Mdata.php(27): CodeIgniter\Database\BaseConnection->query('UPDATE product ...')
+#4 C:\xampp\htdocs\website-produk\app\Controllers\Home.php(73): App\Models\Mdata->editProduct('1', 'Doritos', 'Makanan', 'Snack yang terb...', '5000')
+#5 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+#6 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\website-produk\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\website-produk\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-11-29 11:54:12 --> Duplicate entry '1' for key 'PRIMARY'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\Mdata.php(27): CodeIgniter\Database\BaseConnection->query('UPDATE product SET product_id = \'1\', product_name = \'Doritos\', product_type = \'Makanan\', product_desc = \'Snack yang terbuat dari bahan jagung enak\', product_price = \'5000\'')
+ 2 APPPATH\Controllers\Home.php(73): App\Models\Mdata->editProduct('1', 'Doritos', 'Makanan', 'Snack yang terbuat dari bahan jagung enak', '5000')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-29 22:49:12 --> Call to a member function isValid() on null
+in APPPATH\Controllers\Home.php on line 86.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addImage()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-11-29 22:50:00 --> Call to a member function isValid() on string
+in APPPATH\Controllers\Home.php on line 86.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->addImage()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
