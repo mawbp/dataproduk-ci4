@@ -1,0 +1,5 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/
+- /usr/bin/rsync -Paz * $DEPLOYPATH --delete
