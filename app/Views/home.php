@@ -22,32 +22,34 @@
             <button class="btn btn-danger">Cetak PDF</button>
           </div>
           <div class="card-body">
-            <table id="tbproduct" class="table table-hover w100">
-              <thead>
-                <tr>
-                  <th class="w5">ID</th>
-                  <th class="w20">Nama</th>
-                  <th class="w15">Harga Beli</th>
-                  <th class="w15">Harga Jual</th>
-                  <th class="w10">Satuan</th>
-                  <th class="w10">Kategori</th>
-                  <th class="w15">Gambar</th>
-                  <th class="w10">Aksi</th>
-                </tr>
-              </thead>
-              <tfoot>
-                <tr>
-                  <th class="w5">ID</th>
-                  <th class="w20">Nama</th>
-                  <th class="w15">Harga Beli</th>
-                  <th class="w15">Harga Jual</th>
-                  <th class="w10">Satuan</th>
-                  <th class="w10">Kategori</th>
-                  <th class="w15">Gambar</th>
-                  <th class="w10">Aksi</th>
-                </tr>
-              </tfoot>
-            </table>
+            <div class="table-responsive">
+              <table id="tbproduct" class="table table-hover w100">
+                <thead>
+                  <tr>
+                    <th class="w5">ID</th>
+                    <th class="w20">Nama</th>
+                    <th class="w15">Harga Beli</th>
+                    <th class="w15">Harga Jual</th>
+                    <th class="w10">Satuan</th>
+                    <th class="w10">Kategori</th>
+                    <th class="w15">Gambar</th>
+                    <th class="w10">Aksi</th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th class="w5">ID</th>
+                    <th class="w20">Nama</th>
+                    <th class="w15">Harga Beli</th>
+                    <th class="w15">Harga Jual</th>
+                    <th class="w10">Satuan</th>
+                    <th class="w10">Kategori</th>
+                    <th class="w15">Gambar</th>
+                    <th class="w10">Aksi</th>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
           </div>
         </div>
         <br><br><br>
