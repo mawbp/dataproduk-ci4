@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+header('Access-Control-Allow-Origin:*');
 use App\Models\Mdata;
 use App\Models\ProductsModel;
 
