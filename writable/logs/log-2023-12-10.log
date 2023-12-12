@@ -1,0 +1,68 @@
+ERROR - 2023-12-10 10:24:32 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Models/Mdata.php(11): CodeIgniter\Database\BaseConnection->query()
+#4 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Controllers/Home.php(20): App\Models\Mdata->showProduct()
+#5 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#6 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Models/Mdata.php(11): CodeIgniter\Database\BaseConnection->query()
+#3 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Controllers/Home.php(20): App\Models\Mdata->showProduct()
+#4 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#5 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#6 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-12-10 10:24:32 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/Mdata.php(11): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Controllers/Home.php(20): App\Models\Mdata->showProduct()
+ 4 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-12-10 10:33:46 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/MySQLi/Connection.php:185
+Stack trace:
+#0 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/MySQLi/Connection.php(185): mysqli->real_connect()
+#1 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Models/Mdata.php(11): CodeIgniter\Database\BaseConnection->query()
+#4 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Controllers/Home.php(20): App\Models\Mdata->showProduct()
+#5 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#6 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#7 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/MySQLi/Connection.php:229
+Stack trace:
+#0 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Models/Mdata.php(11): CodeIgniter\Database\BaseConnection->query()
+#3 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Controllers/Home.php(20): App\Models\Mdata->showProduct()
+#4 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(942): App\Controllers\Home->showProduct()
+#5 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+#6 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/system/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-12-10 10:33:46 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+in SYSTEMPATH/Database/BaseConnection.php on line 428.
+ 1 SYSTEMPATH/Database/BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH/Models/Mdata.php(11): CodeIgniter\Database\BaseConnection->query()
+ 3 APPPATH/Controllers/Home.php(20): App\Models\Mdata->showProduct()
+ 4 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Home->showProduct()
+ 5 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
