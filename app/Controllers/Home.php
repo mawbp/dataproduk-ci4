@@ -245,7 +245,7 @@ class Home extends BaseController
       'gambare' => [
         'rules' => 'is_image[gambare]',
         'errors' => [
-          'ext_in' => 'Pilih gambar ekstensi (.jpg)',
+          'is_image' => 'Pilih gambar ekstensi (.jpg)',
         ]
       ]
     ]);
@@ -270,12 +270,7 @@ class Home extends BaseController
       }
       $file = $id . '.jpg';
       $gambar->move(ROOTPATH . 'writable/uploads', $file);
-    } else {
-      if(file_exists($path)){
-        unlink($path);
-      }
     }
-
     $dt = $this->Mdata->updateProduct($id,$nama,$hbeli,$hjual,$satuan,$kategori,$qrcode);
     return $dt == '1' ? $this->setResponse(true, 'Data berhasil diubah!') : $this->setResponse(false, 'Data gagal diubah!');
   }
