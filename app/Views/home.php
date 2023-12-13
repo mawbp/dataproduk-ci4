@@ -13,7 +13,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 mt-5">
-        <h1 class="rata-tengah fw-bold">Data Produk</h1>
+        <h1 class="rata-tengah fw-bold">Data Produk Lokal</h1>
         <div class="col-md-12"></div>
         <div class="card mt-3">
           <div class="card-header">
