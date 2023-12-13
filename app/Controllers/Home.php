@@ -263,12 +263,16 @@ class Home extends BaseController
     $kategori   = $this->request->getPost('kategorie');
     $qrcode     = $this->request->getPost('qrcodee');
     $gambar     = $this->request->getFile('gambare');
+    $path       = 'writable/uploads/' . $id . '.jpg';
     if($gambar->getError() != 4){
+      if(file_exists($path)){
+        unlink($path);
+      }
       $file = $id . '.jpg';
       $gambar->move(ROOTPATH . 'writable/uploads', $file);
     } else {
-      if(file_exists('writable/uploads/'  . $id . '.jpg')){
-        unlink('writable/uploads/'  . $id . '.jpg');
+      if(file_exists($path)){
+        unlink($path);
       }
     }
 

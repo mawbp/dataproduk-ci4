@@ -235,12 +235,12 @@
       </div>
     </div>
   </div>
-<script src="<?= BASE; ?>writable/assets/js/jquery-3.7.0.js"></script>
-<script src="<?= BASE; ?>writable/assets/js/bootstrap.min.js"></script>
-<script src="<?= BASE; ?>writable/assets/js/jquery.dataTables.min.js"></script>
-<script src="<?= BASE; ?>writable/assets/js/dataTables.bootstrap5.min.js"></script>
-<script src="<?= BASE; ?>writable/assets/sweetalert2.min.js"></script>
-<script  type="text/javascript">
+  <script src="<?= BASE; ?>writable/assets/js/jquery-3.7.0.js"></script>
+  <script src="<?= BASE; ?>writable/assets/js/bootstrap.min.js"></script>
+  <script src="<?= BASE; ?>writable/assets/js/jquery.dataTables.min.js"></script>
+  <script src="<?= BASE; ?>writable/assets/js/dataTables.bootstrap5.min.js"></script>
+  <script src="<?= BASE; ?>writable/assets/sweetalert2.min.js"></script>
+  <script  type="text/javascript">
   let table = $("#tbproduct").DataTable({
     "ajax": "<?= BASE; ?>showproduct",
     "createdRow": (row) =>{
@@ -337,6 +337,7 @@
             resetEdit();
             $("#updatemodal").modal("hide");
             table.ajax.reload();
+            location.reload();
           } else {
             const err = res.errors;
             $.each(err, (key, value) => {
@@ -665,6 +666,6 @@
       }
     }
   }
-</script>
+  </script>
 </body>
 </html>
