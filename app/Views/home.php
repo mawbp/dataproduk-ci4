@@ -314,51 +314,46 @@
     $("#editForm").submit((e) => {
       e.preventDefault();
       const form = document.getElementById('editForm');
-      const formData = new FormData(form)
-      $.ajax(
-        {
-          url: '<?= BASE; ?>editproduct',
-          method: 'POST',
-          data: formData,
-          processData: false,
-          contentType: false,
-          cache: 'false',
-          success: (res) => {
-            if(res.success){
-              Swal.fire(
-                {
-                  title: 'Berhasil',
-                  text: res.msg,
-                  showConfirmButton: false,
-                  icon: 'success',
-                  timer: 1000
-                }
-              );
-              resetEdit();
-              $("#updatemodal").modal("hide");
-              table.ajax.reload(null, false);
-            } else {
-              const err = res.errors;
-              $.each(err, (key, value) => {
-                let input = $('[name="' + key + '"]');
-                input.addClass('is-invalid');
-                input.siblings('.invalid-feedback').html(value);
-                handleInput();
-              });
+      const formData = new FormData(form);
+      fetch('<?= BASE; ?>editproduct', {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.success) {
+          Swal.fire(
+            {
+              title: 'Berhasil',
+              text: res.msg,
+              showConfirmButton: false,
+              icon: 'success',
+              timer: 1000
             }
-          },
-          error: () => {
-            Swal.fire(
-              {
-                title: 'Gagal',
-                text: 'Koneksi ke Controller Gagal',
-                icon: 'error'
-              }
-            );
-          }
+          );
+          resetEdit();
+          $("#updatemodal").modal("hide");
+          table.ajax.reload(null, false);
+        } else {
+          const err = data.errors;
+          $.each(err, (key, value) => {
+            let input = $('[name="' + key + '"]');
+            input.addClass('is-invalid');
+            input.siblings('.invalid-feedback').html(value);
+            handleInput();
+          });
         }
-      )
-    })
+      })
+      .catch(err => {
+        Swal.fire(
+          {
+            title: 'Gagal',
+            text: 'Koneksi ke Controller Gagal',
+            icon: 'error',
+          }
+        )
+      });
+    });
 
     function resetAdd()
     {
