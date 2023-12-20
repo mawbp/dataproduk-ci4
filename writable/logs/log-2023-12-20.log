@@ -1,0 +1,21 @@
+CRITICAL - 2023-12-20 14:07:15 --> Undefined array key "hbelie"
+in APPPATH\Controllers\Home.php on line 279.
+ 1 APPPATH\Controllers\Home.php(279): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "hbelie"', 'C:\\wamp64\\www\\dataproduk-ci4\\app\\Controllers\\Home.php', 279)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-20 14:10:07 --> Undefined array key "ide"
+in APPPATH\Controllers\Home.php on line 279.
+ 1 APPPATH\Controllers\Home.php(279): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ide"', 'C:\\wamp64\\www\\dataproduk-ci4\\app\\Controllers\\Home.php', 279)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-20 14:10:41 --> Undefined array key "ide"
+in APPPATH\Controllers\Home.php on line 279.
+ 1 APPPATH\Controllers\Home.php(279): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "ide"', 'C:\\wamp64\\www\\dataproduk-ci4\\app\\Controllers\\Home.php', 279)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->editProduct()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
