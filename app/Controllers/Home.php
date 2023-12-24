@@ -9,9 +9,8 @@ class Home extends BaseController
   
   public function index()
   {
-    $dtx = new Mdata();
-    $x["satuan"] = $dtx->getSatuan();
-    $x["kategori"] = $dtx->getKategori();
+    $x["satuan"] = $this->Mdata->getSatuan();
+    $x["kategori"] = $this->Mdata->getKategori();
     return view('home', $x);
   }
 

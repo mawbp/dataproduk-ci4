@@ -84,31 +84,37 @@
                   </div>
                   <div class="col-md-12">
                     <label class="form-label fw-bold fs13">Satuan</label>
-                    <select class="form-select cboadd" form="addForm" name="satuan" id="satuan">
-                      <option value="default">--Pilih tipe--</option>
-                      <option value="01">Bijian</option>
-                      <option value="02">Kardus</option>
-                      <option value="03">Kilogram</option>
-                      <option value="04">Liter</option>
-                      <option value="05">Ons</option>
-                      <option value="06">Renteng</option>
+                    <select class="form-select cboupdate" form="addForm" name="satuan" id="satuan">
+                      <option>--Pilih tipe--</option>
+                      <?php  
+                        if(is_array($satuan)) {
+                          if(count($satuan) > 0) {
+                            foreach($satuan as $s) {
+                              $id = $s->id;
+                              $nama = $s->nama;
+                              echo "<option value=$id>$nama</option>";
+                            }
+                          }
+                        }
+                      ?>
                     </select>
                     <div id="inv-type" class="invalid-feedback"></div>
                   </div>
                   <div class="col-md-12">
                     <label class="form-label fw-bold fs13">Kategori</label>
-                    <select class="form-select cboadd" form="addForm" name="kategori" id="kategori" oninput="imgpreviewadd()">
-                      <option value="default">--Pilih tipe--</option>
-                      <option value="01">Makanan</option>
-                      <option value="02">Minuman</option>
-                      <option value="03">Peralatan Rumah Tangga</option>
-                      <option value="04">Kosmetik</option>
-                      <option value="05">Alat Tulis Kantor</option>
-                      <option value="06">Peralatan Bayi</option>
-                      <option value="07">Bahan Masakan</option>
-                      <option value="08">Sabun</option>
-                      <option value="09">Barang Digital</option>
-                      <option value="10">Ice Cream</option>
+                    <select class="form-select cboupdate" form="addForm" name="kategori" id="kategori" oninput="imgpreviewadd()">
+                      <option>--Pilih tipe--</option>
+                      <?php  
+                        if(is_array($kategori)) {
+                          if(count($kategori) > 0) {
+                            foreach($kategori as $k) {
+                              $id = $k->id;
+                              $nama = $k->nama;
+                              echo "<option value=$id>$nama</option>";
+                            }
+                          }
+                        }
+                      ?>
                     </select>
                     <div id="inv-type" class="invalid-feedback"></div>
                   </div>
@@ -172,17 +178,13 @@
                         if(is_array($satuan)) {
                           if(count($satuan) > 0) {
                             foreach($satuan as $s) {
-                              $id = 
+                              $id = $s->id;
+                              $nama = $s->nama;
+                              echo "<option value=$id>$nama</option>";
                             }
                           }
                         }
                       ?>
-                      <option value="01">Bijian</option>
-                      <option value="02">Kardus</option>
-                      <option value="03">Kilogram</option>
-                      <option value="04">Liter</option>
-                      <option value="05">Ons</option>
-                      <option value="06">Renteng</option>
                     </select>
                     <div id="inv-type" class="invalid-feedback"></div>
                   </div>
@@ -190,16 +192,17 @@
                     <label class="form-label fw-bold fs13">Kategori</label>
                     <select class="form-select cboupdate" form="editForm" name="kategorie" id="kategorie" oninput="imgpreviewedit()">
                       <option>--Pilih tipe--</option>
-                      <option value="01">Makanan</option>
-                      <option value="02">Minuman</option>
-                      <option value="03">Peralatan Rumah Tangga</option>
-                      <option value="04">Kosmetik</option>
-                      <option value="05">Alat Tulis Kantor</option>
-                      <option value="06">Peralatan Bayi</option>
-                      <option value="07">Bahan Masakan</option>
-                      <option value="08">Sabun</option>
-                      <option value="09">Barang Digital</option>
-                      <option value="10">Ice Cream</option>
+                      <?php  
+                        if(is_array($kategori)) {
+                          if(count($kategori) > 0) {
+                            foreach($kategori as $k) {
+                              $id = $k->id;
+                              $nama = $k->nama;
+                              echo "<option value=$id>$nama</option>";
+                            }
+                          }
+                        }
+                      ?>
                     </select>
                     <div id="inv-type" class="invalid-feedback"></div>
                   </div>

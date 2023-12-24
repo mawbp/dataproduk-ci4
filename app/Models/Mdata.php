@@ -12,6 +12,20 @@ class Mdata extends Model {
     return $dt ? $dt->getResult() : 0; 
   }
 
+  public function getSatuan()
+  {
+    $sql = "SELECT id, nama FROM satuan";
+    $dt = db_connect()->query($sql);
+    return $dt ? $dt->getResult() : 0;
+  }
+
+  public function getKategori()
+  {
+    $sql = "SELECT id, nama FROM kategori";
+    $dt = db_connect()->query($sql);
+    return $dt ? $dt->getResult() : 0;
+  }
+
   public function getProduct($id)
   {
     $sql = "SELECT id, nama, hargabeli, hargajual, id_satuan AS satuan, id_kategori AS kategori, qr FROM barang WHERE id = '$id'";
