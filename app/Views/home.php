@@ -168,6 +168,15 @@
                     <label class="form-label fw-bold fs13">Satuan</label>
                     <select class="form-select cboupdate" form="editForm" name="satuane" id="satuane">
                       <option>--Pilih tipe--</option>
+                      <?php  
+                        if(is_array($satuan)) {
+                          if(count($satuan) > 0) {
+                            foreach($satuan as $s) {
+                              $id = 
+                            }
+                          }
+                        }
+                      ?>
                       <option value="01">Bijian</option>
                       <option value="02">Kardus</option>
                       <option value="03">Kilogram</option>
@@ -266,49 +275,83 @@
       e.preventDefault();
       const form = document.getElementById('addForm');
       const formData = new FormData(form);
-      $.ajax(
-        {
-          url: '<?= BASE; ?>addproduct',
-          method: 'POST',
-          data: formData,
-          processData: false,
-          contentType: false,
-          cache: 'false',
-          success: (res) => {
-            if(res.success){
-              Swal.fire(
-                {
-                  title: 'Berhasil',
-                  text: res.msg,
-                  showConfirmButton: false,
-                  icon: 'success',
-                  timer: 1000
-                }
-              );
-              resetAdd();
-              table.ajax.reload();
-            } else {
-              const err = res.msg;
-              $.each(err, (key, value) => {
-                let input = $('[name="' + key + '"]');
-                input.addClass('is-invalid');
-                input.siblings('.invalid-feedback').html(value);
-                handleInput();
-              });
-            }
-          },
-          error: (res) => {
-            Swal.fire(
-              {
-                title: 'Gagal',
-                text: 'Koneksi ke Controller Gagal',
-                icon: 'error',
-              }
-            )
-            console.log(res);
-          }
+      fetch('<?= BASE; ?>addproduct', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if(!response.ok) {
+          throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
         }
-      )
+        return response.json()
+      })
+      .then(data => {
+        if(data.success) {
+          Swal.fire(
+            {
+              title: 'Berhasil',
+              text: data.msg,
+              showConfirmButton: false,
+              icon: 'success',
+              timer: 1000
+            }
+          );
+          resetAdd();
+          table.ajax.reload();
+        } else {
+          const err = data.msg;
+          $.each(err, (key, value) => {
+            let input = $('[name="' + key + '"]');
+            input.addClass('is-invalid');
+            input.siblings('.invalid-feedback').html(value);
+            handleInput();
+          });
+        }
+      })
+      .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
+      // $.ajax(
+      //   {
+      //     url: '<?= BASE; ?>addproduct',
+      //     method: 'POST',
+      //     data: formData,
+      //     processData: false,
+      //     contentType: false,
+      //     cache: 'false',
+      //     success: (res) => {
+      //       if(res.success){
+      //         Swal.fire(
+      //           {
+      //             title: 'Berhasil',
+      //             text: res.msg,
+      //             showConfirmButton: false,
+      //             icon: 'success',
+      //             timer: 1000
+      //           }
+      //         );
+      //         resetAdd();
+      //         table.ajax.reload();
+      //       } else {
+      //         const err = res.msg;
+      //         $.each(err, (key, value) => {
+      //           let input = $('[name="' + key + '"]');
+      //           input.addClass('is-invalid');
+      //           input.siblings('.invalid-feedback').html(value);
+      //           handleInput();
+      //         });
+      //       }
+      //     },
+      //     error: (res) => {
+      //       Swal.fire(
+      //         {
+      //           title: 'Gagal',
+      //           text: 'Koneksi ke Controller Gagal',
+      //           icon: 'error',
+      //         }
+      //       )
+      //       console.log(res);
+      //     }
+      //   }
+      // )
     })
 
     $("#editForm").submit((e) => {
@@ -319,13 +362,18 @@
         method: 'POST',
         body: formData,
       })
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
+        }
+        return response.json();
+      })
       .then(data => {
         if(data.success) {
           Swal.fire(
             {
               title: 'Berhasil',
-              text: res.msg,
+              text: data.msg,
               showConfirmButton: false,
               icon: 'success',
               timer: 1000
@@ -335,7 +383,7 @@
           $("#updatemodal").modal("hide");
           table.ajax.reload(null, false);
         } else {
-          const err = data.errors;
+          const err = data.msg;
           $.each(err, (key, value) => {
             let input = $('[name="' + key + '"]');
             input.addClass('is-invalid');
@@ -344,15 +392,7 @@
           });
         }
       })
-      .catch(err => {
-        Swal.fire(
-          {
-            title: 'Gagal',
-            text: 'Koneksi ke Controller Gagal',
-            icon: 'error',
-          }
-        )
-      });
+      .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
     });
 
     function resetAdd()
@@ -515,12 +555,6 @@
           )
         }
       })
-    }
-
-    function cobak()
-    {
-      let data = new FormData(this);
-      console.log(data);
     }
 
     function openimage(e)

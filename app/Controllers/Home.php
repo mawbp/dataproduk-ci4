@@ -7,9 +7,12 @@ use App\Models\ProductsModel;
 class Home extends BaseController
 {
   
-  public function index(): string
+  public function index()
   {
-    return view('home');
+    $dtx = new Mdata();
+    $x["satuan"] = $dtx->getSatuan();
+    $x["kategori"] = $dtx->getKategori();
+    return view('home', $x);
   }
 
   
@@ -252,7 +255,7 @@ class Home extends BaseController
 
     if(!$validation->run($_POST)){
       $errors = $validation->getErrors();
-      return $this->response->setJSON(['success' => false, 'errors' => $errors]);
+      return $this->setResponse(false, $errors);
     }
 
     $id         = $this->request->getPost('ide');
@@ -304,11 +307,13 @@ class Home extends BaseController
     }
   }
 
-  public function formData() {
+  public function formData()
+  {
     return view('formdata');
   }
 
-  public function cobaForm() {
+  public function cobaForm()
+  {
     $nama = $this->request->getPost('username');
     $path = $this->request->getVar('pathx');
     $data = sprintf('{"kode":"1","nama":"%s","path":"%s"}', $nama, $path);
