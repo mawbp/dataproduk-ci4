@@ -46,4 +46,11 @@ class Mdata extends Model {
     $dt = db_connect()->query($sql);
     return $dt ? '1' : '0';
   }
+  
+  public function cekLogin($username, $password)
+  {
+      $sql = "SELECT * FROM kasir WHERE username = '$username' AND password = '$password'";
+      $dt = db_connect()->query($sql);
+      return $dt ? $dt->getResult() : 0;
+  }
 }

@@ -1,0 +1,26 @@
+CRITICAL - 2023-12-12 06:54:25 --> Undefined variable $routs
+in APPPATH/Config/Routes.php on line 24.
+ 1 APPPATH/Config/Routes.php(24): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/Router/RouteCollection.php(344): require('/home/nominasp/api.hermawan.nomina.space/dataproduk-ci4/app/Config/Routes.php')
+ 3 SYSTEMPATH/CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 4 SYSTEMPATH/CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 06:55:02 --> Undefined constant "App\Controllers\nama"
+in APPPATH/Controllers/Api.php on line 52.
+ 1 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Api->login()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 06:57:17 --> Undefined constant "App\Controllers\nama"
+in APPPATH/Controllers/Api.php on line 52.
+ 1 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Api->login()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 06:58:05 --> Undefined constant "App\Controllers\nama"
+in APPPATH/Controllers/Api.php on line 52.
+ 1 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Api->login()
+ 2 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
