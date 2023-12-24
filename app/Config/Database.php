@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => '127.0.0.1',
-        'username'     => 'root',
-        'password'     => '',
-        'database'     => 'db_pos',
+        'username'     => 'nominasp_4121017',
+        'password'     => 'hermawan17',
+        'database'     => 'nominasp_4121017_dbpos',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
