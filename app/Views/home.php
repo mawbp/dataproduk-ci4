@@ -53,13 +53,14 @@
           </div>
         </div>
         <br><br><br>
+        <form id="addForm"></form>
+        <form id="editForm"></form>
         <div class="modal fade" id="addmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
           <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title fs20">Tambah Produk</h5>
               </div>
-              <form id="addForm"></form>
               <div class="modal-body">
                 <div class="row g-3">
                   <div class="col-md-12">
@@ -146,7 +147,6 @@
               <div class="modal-header">
                 <h5 class="modal-title fs20">Update Produk</h5>
               </div>
-              <form id="editForm"></form>
               <div class="modal-body">
                 <div class="row g-3">
                   <div class="col-md-12">
@@ -252,7 +252,7 @@
   <script src="<?= BASE; ?>writable/assets/js/jquery.dataTables.min.js"></script>
   <script src="<?= BASE; ?>writable/assets/js/dataTables.bootstrap5.min.js"></script>
   <script src="<?= BASE; ?>writable/assets/sweetalert2.min.js"></script>
-  <script  type="text/javascript">
+  <script>
     let table = $("#tbproduct").DataTable({
       "ajax": "<?= BASE; ?>showproduct",
       "createdRow": (row) =>{
@@ -278,124 +278,83 @@
       e.preventDefault();
       const form = document.getElementById('addForm');
       const formData = new FormData(form);
-      fetch('<?= BASE; ?>addproduct', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => {
-        if(!response.ok) {
-          throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
-        }
-        return response.json()
-      })
-      .then(data => {
-        if(data.success) {
-          Swal.fire(
-            {
-              title: 'Berhasil',
-              text: data.msg,
-              showConfirmButton: false,
-              icon: 'success',
-              timer: 1000
+      fetch('<?= BASE; ?>addproduct', {method: 'POST', body: formData})
+        .then(response => {
+          if(!response.ok) {
+            throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
+          }
+          return response.json()
+        })
+        .then(data => {
+          if(data.success) {
+            Swal.fire(
+              {
+                title: 'Berhasil',
+                text: data.msg,
+                showConfirmButton: false,
+                icon: 'success',
+                timer: 1000
+              }
+            );
+            resetAdd();
+            table.ajax.reload();
+          } else {
+            const err = data.msg;
+            if(typeof err == 'object') {
+              $.each(err, (key, value) => {
+                let input = $('[name="' + key + '"]');
+                input.addClass('is-invalid');
+                input.siblings('.invalid-feedback').html(value);
+                handleInput();
+              });
+            } else {
+              throw({title: 'Gagal', text: data.msg, icon: 'Error'});
             }
-          );
-          resetAdd();
-          table.ajax.reload();
-        } else {
-          const err = data.msg;
-          $.each(err, (key, value) => {
-            let input = $('[name="' + key + '"]');
-            input.addClass('is-invalid');
-            input.siblings('.invalid-feedback').html(value);
-            handleInput();
-          });
-        }
-      })
-      .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
-      // $.ajax(
-      //   {
-      //     url: '<?= BASE; ?>addproduct',
-      //     method: 'POST',
-      //     data: formData,
-      //     processData: false,
-      //     contentType: false,
-      //     cache: 'false',
-      //     success: (res) => {
-      //       if(res.success){
-      //         Swal.fire(
-      //           {
-      //             title: 'Berhasil',
-      //             text: res.msg,
-      //             showConfirmButton: false,
-      //             icon: 'success',
-      //             timer: 1000
-      //           }
-      //         );
-      //         resetAdd();
-      //         table.ajax.reload();
-      //       } else {
-      //         const err = res.msg;
-      //         $.each(err, (key, value) => {
-      //           let input = $('[name="' + key + '"]');
-      //           input.addClass('is-invalid');
-      //           input.siblings('.invalid-feedback').html(value);
-      //           handleInput();
-      //         });
-      //       }
-      //     },
-      //     error: (res) => {
-      //       Swal.fire(
-      //         {
-      //           title: 'Gagal',
-      //           text: 'Koneksi ke Controller Gagal',
-      //           icon: 'error',
-      //         }
-      //       )
-      //       console.log(res);
-      //     }
-      //   }
-      // )
+          }
+        })
+        .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
     })
 
     $("#editForm").submit((e) => {
       e.preventDefault();
       const form = document.getElementById('editForm');
       const formData = new FormData(form);
-      fetch('<?= BASE; ?>editproduct', {
-        method: 'POST',
-        body: formData,
-      })
-      .then(response => {
-        if (!response.ok) {
-          throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
-        }
-        return response.json();
-      })
-      .then(data => {
-        if(data.success) {
-          Swal.fire(
-            {
-              title: 'Berhasil',
-              text: data.msg,
-              showConfirmButton: false,
-              icon: 'success',
-              timer: 1000
+      fetch('<?= BASE; ?>editproduct', {method: 'POST', body: formData,})
+        .then(response => {
+          if (!response.ok) {
+            throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
+          }
+          return response.json();
+        })
+        .then(data => {
+          if(data.success) {
+            Swal.fire(
+              {
+                title: 'Berhasil',
+                text: data.msg,
+                showConfirmButton: false,
+                icon: 'success',
+                timer: 1000
+              }
+            );
+            resetEdit();
+            $("#updatemodal").modal("hide");
+            table.ajax.reload(null, false);
+          } else {
+            const err = data.msg;
+            if(typeof err == 'object') {
+              $.each(err, (key, value) => {
+                let input = $('[name="' + key + '"]');
+                input.addClass('is-invalid');
+                input.siblings('.invalid-feedback').html(value);
+                handleInput();
+              });
+            } else {
+              throw({title: 'Gagal', text: data.msg, icon: 'Error'});
             }
-          );
-          resetEdit();
-          $("#updatemodal").modal("hide");
-          table.ajax.reload(null, false);
-        } else {
-          const err = data.msg;
-          $.each(err, (key, value) => {
-            let input = $('[name="' + key + '"]');
-            input.addClass('is-invalid');
-            input.siblings('.invalid-feedback').html(value);
-            handleInput();
-          });
-        }
-      })
-      .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
+          }
+        })
+        .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
     });
 
     function resetAdd()
@@ -487,7 +446,7 @@
       $(".cboupdate").removeClass('is-invalid');
       $(".invalid-feedback").html('');
     }
-    
+
     function deleteProduct()
     {
       let id = $("#ide").val();
@@ -515,47 +474,32 @@
         }
       ).then((res) => {
         if(res.isConfirmed){
-          $.ajax(
-            {
-              url: '<?= BASE; ?>deleteproduct',
-              method: 'POST',
-              data: {idx: id},
-              cache: 'false',
-              success: (res) => {
-                if(res.success){
-                  Swal.fire(
-                    {
-                      title: 'Berhasil',
-                      text: res.msg,
-                      icon: 'success',
-                      showConfirmButton: false,
-                      timer: 1500
-                    }
-                  );
-                  resetEdit();
-                  table.ajax.reload();
-                  $("#updatemodal").modal("hide");
-                } else {
-                  Swal.fire(
-                    {
-                      title: 'Gagal',
-                      text: res.msg,
-                      icon: 'error',
-                    }
-                  )
-                }
-              },
-              error: () => {
-                Swal.fire(
-                  {
-                    title: 'Gagal',
-                    text: 'Koneksi ke controller gagal',
-                    icon: 'error',
-                  }
-                )
+          fetch('<?= BASE; ?>deleteproduct', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({idx: id})})
+            .then(response => {
+              if(!response.ok) {
+                throw({title: 'Gagal', text: 'Koneksi Gagal', icon: 'Error'});
               }
-            }
-          )
+              return response.json();
+            })
+            .then(data => {
+              if(data.success) {
+                Swal.fire({
+                  title: 'Berhasil',
+                  text: data.msg,
+                  icon: 'success',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+                resetEdit();
+                table.ajax.reload();
+                $("#updatemodal").modal("hide");
+              } else {
+                throw({title: 'Gagal', text: data.msg, icon: 'Error'});
+              }
+            })
+            .catch(err => {
+              Swal.fire({title: err.title, text: err.text, icon: err.icon});
+            })
         }
       })
     }
@@ -624,29 +568,7 @@
         preview.attr('src', e.target.result);
       }
     }
-
-    function inputgambar()
-    {
-      const ktg = $("#kategorie").val();
-      const path = 'writable/assets/img/';
-      switch(ktg){
-        case '01': $("#img-previewe").attr('src', path + 'burger.svg'); break;
-        case '02': $("#img-previewe").attr('src', path + 'coke.svg'); break;
-        case '03': $("#img-previewe").attr('src', path + 'cleaning-mop.svg'); break;
-        case '04': $("#img-previewe").attr('src', path + 'cosmetics.svg'); break;
-        case '05': $("#img-previewe").attr('src', path + 'list.svg'); break;
-        case '06': $("#img-previewe").attr('src', path + 'fatherhood.svg'); break;
-        case '07': $("#img-previewe").attr('src', path + 'cooking-stew.svg'); break;
-        case '08': $("#img-previewe").attr('src', path + 'wash.svg'); break;
-        case '09': $("#img-previewe").attr('src', path + 'smartphone-touch-screen.svg'); break;
-        case '10': $("#img-previewe").attr('src', path + 'ice-cream.svg'); break;
-        default: $("#img-previewe").attr('src', 'writable/assets/img/default.svg')
-      }
-      $("#tombolinputgambar").hide();
-      $("#img-previewe").show();
-      $("#inputgambar").show();
-    }
-
+    
     function handleInput()
     {  
       $('input, select').on('input', function(){
