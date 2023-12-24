@@ -39,6 +39,34 @@ class Api extends BaseController
     $dt = $this->Mdata->getProductApi($qr);
     echo json_encode($dt);
   }
+  
+  public function login()
+  {
+      $dtx = new Mdata();
+      $username = $this->request->getVar('usr');
+      $password = $this->request->getVar('pss');
+      $hasil = $dtx->cekLogin($username, md5(md5(md5($password))));
+      if(is_array($hasil)){
+          if(count($hasil) > 0){
+              foreach($hasil as $x){
+                  $id = $x->id;
+                  $nama = $x->nama;
+                  $username = $x->username;
+                  $status = $x->status;
+              }
+              if($status == 'Y'){
+                  $token = enkripsi($username."|".md5(md5(md5($password))));
+                  echo '{"kode":"1", "pesan":"Login Berhasil", "id":"'. $id .'", "username":"'. $username .'", "nama":"' . $nama . '","token":"' . $token . '" }';
+              } else {
+                  echo '{"kode":"0","pesan":"Login Gagal Status Kasir Tidak Aktif"}';
+              }
+          } else {
+              echo '{"kode":"0","pesan":"Login Gagal Data Tidak DItemukan"}';
+          }
+      } else {
+          echo '{"kode":"0","pesan":"Login Gagal Data Tidak DItemukan"}';
+      }
+  }
 
   public function hapus()
   {

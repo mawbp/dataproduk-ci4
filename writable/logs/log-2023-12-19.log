@@ -1,0 +1,18 @@
+WARNING - 2023-12-19 04:57:17 --> [DEPRECATED] md5(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Api.php on line 48.
+ 1 APPPATH/Controllers/Api.php(48): md5(null)
+ 2 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Api->login()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-12-19 04:58:37 --> [DEPRECATED] md5(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Api.php on line 48.
+ 1 APPPATH/Controllers/Api.php(48): md5(null)
+ 2 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Api->login()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
+WARNING - 2023-12-19 05:00:21 --> [DEPRECATED] md5(): Passing null to parameter #1 ($string) of type string is deprecated in APPPATH/Controllers/Api.php on line 48.
+ 1 APPPATH/Controllers/Api.php(48): md5(null)
+ 2 SYSTEMPATH/CodeIgniter.php(942): App\Controllers\Api->login()
+ 3 SYSTEMPATH/CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api))
+ 4 SYSTEMPATH/CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH/index.php(79): CodeIgniter\CodeIgniter->run()
