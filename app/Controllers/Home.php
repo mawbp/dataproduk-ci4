@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Controllers;
-use App\Models\Mdata;
-use App\Models\ProductsModel;
 
 class Home extends BaseController
 {
@@ -13,7 +11,6 @@ class Home extends BaseController
     $x["kategori"] = $this->Mdata->getKategori();
     return view('home', $x);
   }
-
   
   public function showProduct()
   {
@@ -170,19 +167,17 @@ class Home extends BaseController
       if(file_exists($path)){
         $file = $id . '.jpg';
       }
+      $data = [
+        'nama'      => $nama,
+        'hbeli'     => $hbeli,
+        'hjual'     => $hjual,
+        'satuan'    => $satuan,
+        'kategori'  => $kategori,
+        'qrcode'    => $qrcode,
+        'file'      => $file,
+      ];
       
-      return $this->response->setJSON(
-        [
-          'success'   => true,
-          'nama'      => $nama,
-          'hbeli'     => $hbeli,
-          'hjual'     => $hjual,
-          'satuan'    => $satuan,
-          'kategori'  => $kategori,
-          'qrcode'    => $qrcode,
-          'file'      => $file,
-        ]
-      );
+      return $this->setResponse(true, $data);
     }
   }
 
@@ -285,37 +280,5 @@ class Home extends BaseController
       unlink('writable/uploads/' . $id . '.jpg');
     }
     return $dt == '1' ? $this->setResponse(true, 'Data berhasil dihapus') : $this->setResponse(false, 'Data gagal dihapus');
-  }
-
-  public function uploadImage()
-  {
-    if($this->request->getMethod() === 'post' && $this->validate(['image' => 'uploaded[image]|is_image[image]'])) {
-      $image = $this->request->getFile('image');
-      
-      if ($image->isValid() && !$image->hasMoved()){
-          $image->move(ROOTPATH . 'writable/uploads');
-          $filename = $image->getname();
-          $filepath = 'writable/uploads/' . $filename;
-          $x = 'berhasil diupload';        
-          return $x;
-      } else {
-          echo '{"kode":"2","pesan":"Gambar gagal diupload"}';
-      }
-    } else {
-        echo '{"kode":"3","pesan":"Format file salah!"}';
-    }
-  }
-
-  public function formData()
-  {
-    return view('formdata');
-  }
-
-  public function cobaForm()
-  {
-    $nama = $this->request->getPost('username');
-    $path = $this->request->getVar('pathx');
-    $data = sprintf('{"kode":"1","nama":"%s","path":"%s"}', $nama, $path);
-    echo $data;
   }
 }

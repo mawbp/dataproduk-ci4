@@ -18,8 +18,6 @@
         <div class="card mt-3">
           <div class="card-header">
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addmodal">Tambah data</button>
-            <button class="btn btn-success">Cetak Excel</button>
-            <button class="btn btn-danger">Cetak PDF</button>
           </div>
           <div class="card-body">
             <div class="table-responsive">
@@ -213,7 +211,7 @@
                   </div>
                   <div class="col-md-12" id="inputgambar">
                     <label class="form-label fw-bold fs13">Gambar</label>
-                    <input type="file" class="form-control fupdate" onchange="previewEdit()" form="editForm" name="gambare" id="gambare" accept="">
+                    <input type="file" class="form-control fupdate" onchange="previewEdit()" form="editForm" name="gambare" id="gambare" accept="jpg">
                     <div id="inv-img" class="invalid-feedback"></div>
                   </div>
                   <div class="col-md-12">
@@ -239,7 +237,7 @@
                 <img id="productImage" class="center">
               </div>
               <div class="modal-footer">
-                <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
               </div>
             </div>
           </div>
@@ -380,62 +378,48 @@
         )
         return; 
       }
-      $.ajax(
-        {
-          url: '<?= BASE; ?>getproduct',
-          method: 'POST',
-          data: {idx: id},
-          cache: 'false',
-          success: (res) => {
-            if(res.success){
-              $("#ide").val(id);
-              $("#idee").val(id);
-              $("#namae").val(res.nama);
-              $("#hbelie").val(res.hbeli);
-              $("#hjuale").val(res.hjual);
-              $("#satuane").val(res.satuan).change();
-              $("#kategorie").val(res.kategori).change();
-              $("#qrcodee").val(res.qrcode);
-              $("#updatemodal").modal('show');
-              const path = 'writable/assets/img/';
-              if(res.file != ''){
-                $("#img-previewe").attr('src', `writable/uploads/${res.file}`);
-              } else {
-                switch(res.kategori){
-                  case '01': $("#img-previewe").attr('src', path + 'burger.svg'); break;
-                  case '02': $("#img-previewe").attr('src', path + 'coke.svg'); break;
-                  case '03': $("#img-previewe").attr('src', path + 'cleaning-mop.svg'); break;
-                  case '04': $("#img-previewe").attr('src', path + 'cosmetics.svg'); break;
-                  case '05': $("#img-previewe").attr('src', path + 'list.svg'); break;
-                  case '06': $("#img-previewe").attr('src', path + 'fatherhood.svg'); break;
-                  case '07': $("#img-previewe").attr('src', path + 'cooking-stew.svg'); break;
-                  case '08': $("#img-previewe").attr('src', path + 'wash.svg'); break;
-                  case '09': $("#img-previewe").attr('src', path + 'smartphone-touch-screen.svg'); break;
-                  case '10': $("#img-previewe").attr('src', path + 'ice-cream.svg'); break;
-                  default: $("#img-previewe").attr('src', 'writable/assets/img/default.svg')
-                }
-              }
-            } else {
-              Swal.fire(
-                {
-                  title: 'Gagal',
-                  text: data.pesan,
-                  icon: 'error',
-                }
-              );
-            }
-          },
-          error: () => {
-            Swal.fire(
-              {
-                title: 'Gagal',
-                text: 'Koneksi ke Controller gagal',
-                icon: 'error',
-              }
-            );
+      fetch('<?= BASE; ?>getproduct', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({idx: id})})
+        .then(response => {
+          if(!response.ok){
+            throw({title: 'Gagal', text: 'Koneksi Gagal', icon: 'Error'});
           }
-        }
-      )
+          return response.json();
+        })
+        .then(data => {
+          if(data.success){
+            const dt = data.msg;
+            $("#ide").val(id);
+            $("#idee").val(id);
+            $("#namae").val(dt.nama);
+            $("#hbelie").val(dt.hbeli);
+            $("#hjuale").val(dt.hjual);
+            $("#satuane").val(dt.satuan).change();
+            $("#kategorie").val(dt.kategori).change();
+            $("#qrcodee").val(dt.qrcode);
+            $("#updatemodal").modal('show');
+            const path = 'writable/assets/img/'
+            if(dt.file != '') {
+              $('#img-previewe').attr('src', `writable/uploads/${dt.file}`);
+            } else {
+              switch(dt.kategori){
+                case '01': $("#img-previewe").attr('src', path + 'burger.svg'); break;
+                case '02': $("#img-previewe").attr('src', path + 'coke.svg'); break;
+                case '03': $("#img-previewe").attr('src', path + 'cleaning-mop.svg'); break;
+                case '04': $("#img-previewe").attr('src', path + 'cosmetics.svg'); break;
+                case '05': $("#img-previewe").attr('src', path + 'list.svg'); break;
+                case '06': $("#img-previewe").attr('src', path + 'fatherhood.svg'); break;
+                case '07': $("#img-previewe").attr('src', path + 'cooking-stew.svg'); break;
+                case '08': $("#img-previewe").attr('src', path + 'wash.svg'); break;
+                case '09': $("#img-previewe").attr('src', path + 'smartphone-touch-screen.svg'); break;
+                case '10': $("#img-previewe").attr('src', path + 'ice-cream.svg'); break;
+                default: $("#img-previewe").attr('src', 'writable/assets/img/default.svg')
+              }
+            }
+          } else {
+            throw({title: 'Gagal', text: 'Koneksi Gagal', icon: 'Error'});
+          }
+        })
+        .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
     }
 
     function resetEdit()
@@ -582,20 +566,23 @@
       let ktg = $("#kategorie").val();
       let id = $("#ide").val();
       let img = $("#img-previewe").attr('src');
+      let poto = $("#gambare").val()
       const path = 'writable/assets/img/';
-      if(img != 'writable/uploads/' + id + '.jpg'){
-        switch(ktg){
-          case '01': $("#img-previewe").attr('src', path + 'burger.svg'); break;
-          case '02': $("#img-previewe").attr('src', path + 'coke.svg'); break;
-          case '03': $("#img-previewe").attr('src', path + 'cleaning-mop.svg'); break;
-          case '04': $("#img-previewe").attr('src', path + 'cosmetics.svg'); break;
-          case '05': $("#img-previewe").attr('src', path + 'list.svg'); break;
-          case '06': $("#img-previewe").attr('src', path + 'fatherhood.svg'); break;
-          case '07': $("#img-previewe").attr('src', path + 'cooking-stew.svg'); break;
-          case '08': $("#img-previewe").attr('src', path + 'wash.svg'); break;
-          case '09': $("#img-previewe").attr('src', path + 'smartphone-touch-screen.svg'); break;
-          case '10': $("#img-previewe").attr('src', path + 'ice-cream.svg'); break;
-          default: $("#img-previewe").attr('src', 'writable/assets/img/default.svg');
+      if(poto == '') {
+        if(img != 'writable/uploads/' + id + '.jpg'){
+          switch(ktg){
+            case '01': $("#img-previewe").attr('src', path + 'burger.svg'); break;
+            case '02': $("#img-previewe").attr('src', path + 'coke.svg'); break;
+            case '03': $("#img-previewe").attr('src', path + 'cleaning-mop.svg'); break;
+            case '04': $("#img-previewe").attr('src', path + 'cosmetics.svg'); break;
+            case '05': $("#img-previewe").attr('src', path + 'list.svg'); break;
+            case '06': $("#img-previewe").attr('src', path + 'fatherhood.svg'); break;
+            case '07': $("#img-previewe").attr('src', path + 'cooking-stew.svg'); break;
+            case '08': $("#img-previewe").attr('src', path + 'wash.svg'); break;
+            case '09': $("#img-previewe").attr('src', path + 'smartphone-touch-screen.svg'); break;
+            case '10': $("#img-previewe").attr('src', path + 'ice-cream.svg'); break;
+            default: $("#img-previewe").attr('src', 'writable/assets/img/default.svg');
+          }
         }
       }
     }
