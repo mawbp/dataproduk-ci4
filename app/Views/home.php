@@ -53,6 +53,7 @@
         <br><br><br>
         <form id="addForm"></form>
         <form id="editForm"></form>
+        <!-- ADD MODAL -->
         <div class="modal fade" id="addmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
           <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
@@ -83,8 +84,8 @@
                   </div>
                   <div class="col-md-12">
                     <label class="form-label fw-bold fs13">Satuan</label>
-                    <select class="form-select cboupdate" form="addForm" name="satuan" id="satuan">
-                      <option>--Pilih tipe--</option>
+                    <select class="form-select cboadd" form="addForm" name="satuan" id="satuan">
+                      <option value="default">--Pilih salah satu--</option>
                       <?php  
                         if(is_array($satuan)) {
                           if(count($satuan) > 0) {
@@ -101,8 +102,8 @@
                   </div>
                   <div class="col-md-12">
                     <label class="form-label fw-bold fs13">Kategori</label>
-                    <select class="form-select cboupdate" form="addForm" name="kategori" id="kategori" oninput="imgpreviewadd()">
-                      <option>--Pilih tipe--</option>
+                    <select class="form-select cboadd" form="addForm" name="kategori" id="kategori" oninput="imgpreviewadd()">
+                      <option value="default">--Pilih salah satu--</option>
                       <?php  
                         if(is_array($kategori)) {
                           if(count($kategori) > 0) {
@@ -139,6 +140,7 @@
             </div>
           </div>
         </div>
+        <!-- UPDATE MODAL -->
         <div class="modal fade" id="updatemodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
           <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
@@ -227,6 +229,7 @@
             </div>
           </div>
         </div>
+        <!-- IMAGE MODAL -->
         <div class="modal fade" role="dialog" id="imagemodal"  tabindex="-1" data-bs-backdrop="static">
           <div class="modal-dialog modal-dialog-scrollable" role="document">
             <div class="modal-content">
@@ -272,28 +275,32 @@
       ],
     });
 
+    function req($url, $data, $headers) {
+      if($headers === undefined) {
+        return fetch($url, {method: 'POST', body: $data})
+      } else {
+        return fetch($url, {method: 'POST', headers: $headers, body: $data})
+      }
+    }
+
+    function swal($title, $text, $icon, $confirm = true, $timer = 0) {
+      Swal.fire({title: $title, text: $text, icon: $icon, showConfirmButton: $confirm, timer: $timer});
+    }
+
     $("#addForm").submit((e) => {
       e.preventDefault();
       const form = document.getElementById('addForm');
       const formData = new FormData(form);
-      fetch('<?= BASE; ?>addproduct', {method: 'POST', body: formData})
+      req('<?= BASE; ?>addproduct', formData)
         .then(response => {
           if(!response.ok) {
-            throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
+            swal('Gagal', 'Gagal terkoneksi', 'eror');
           }
-          return response.json()
+          return response.json();
         })
         .then(data => {
           if(data.success) {
-            Swal.fire(
-              {
-                title: 'Berhasil',
-                text: data.msg,
-                showConfirmButton: false,
-                icon: 'success',
-                timer: 1000
-              }
-            );
+            swal('Berhasil', data.msg, 'success', false, 1000);
             resetAdd();
             table.ajax.reload();
           } else {
@@ -305,36 +312,30 @@
                 input.siblings('.invalid-feedback').html(value);
                 handleInput();
               });
+            } else if(typeof err == 'string') {
+              swal('Gagal', data.msg, 'error');
             } else {
-              throw({title: 'Gagal', text: data.msg, icon: 'Error'});
+              swal('Gagal', 'Gagal terkoneksi', 'error');
             }
           }
         })
-        .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
+        .catch(err => console.error('Error caught: ', err));
     })
 
     $("#editForm").submit((e) => {
       e.preventDefault();
       const form = document.getElementById('editForm');
       const formData = new FormData(form);
-      fetch('<?= BASE; ?>editproduct', {method: 'POST', body: formData,})
+      req('<?= BASE; ?>editproduct', formData)
         .then(response => {
-          if (!response.ok) {
-            throw ({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
+          if(!response.ok) {
+            swal('Gagal','Gagal terkoneksi','error');
           }
           return response.json();
         })
         .then(data => {
           if(data.success) {
-            Swal.fire(
-              {
-                title: 'Berhasil',
-                text: data.msg,
-                showConfirmButton: false,
-                icon: 'success',
-                timer: 1000
-              }
-            );
+            swal('Berhasil', data.msg, 'success', false, 1000);
             resetEdit();
             $("#updatemodal").modal("hide");
             table.ajax.reload(null, false);
@@ -347,12 +348,14 @@
                 input.siblings('.invalid-feedback').html(value);
                 handleInput();
               });
+            } else if(typeof err == 'string') {
+              swal('Gagal',data.msg,'error');
             } else {
-              throw({title: 'Gagal', text: data.msg, icon: 'Error'});
+              swal('Gagal','Gagal terkoneksi','error');
             }
           }
         })
-        .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
+        .catch(err => console.error('Error caught: ', err));
     });
 
     function resetAdd()
@@ -369,19 +372,13 @@
     {
       let id = $(e).data("id");
       if(id == "") {
-        Swal.fire(
-          {
-            title: 'Gagal',
-            text: 'Data tidak terdeteksi',
-            icon: 'error'
-          }
-        )
+        swal('Gagal', 'Data tidak terdeteksi', 'error');
         return; 
       }
-      fetch('<?= BASE; ?>getproduct', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({idx: id})})
+      req('<?= BASE; ?>getproduct', JSON.stringify({idx: id}), {'Content-Type': 'application/json'})
         .then(response => {
-          if(!response.ok){
-            throw({title: 'Gagal', text: 'Koneksi Gagal', icon: 'Error'});
+          if(!response.ok) {
+            alert('Gagal','Gagal tekoneksi','error');
           }
           return response.json();
         })
@@ -416,10 +413,10 @@
               }
             }
           } else {
-            throw({title: 'Gagal', text: 'Koneksi Gagal', icon: 'Error'});
+            throw({title: 'Gagal', text: 'Koneksi Gagal', icon: 'error'});
           }
         })
-        .catch(err => Swal.fire({title: err.title, text: err.text, icon: err.icon}));
+        .catch(err => console.error('Error caught: ', err));
     }
 
     function resetEdit()
@@ -435,13 +432,7 @@
     {
       let id = $("#ide").val();
       if(id == ""){
-        Swal.fire(
-          {
-            title: 'Gagal',
-            text: 'ID produk masih kosong',
-            icon: 'error',
-          }
-        );
+        swal('Gagal', 'ID produk masih kosong', 'error');
         return;
       }
       
@@ -458,32 +449,24 @@
         }
       ).then((res) => {
         if(res.isConfirmed){
-          fetch('<?= BASE; ?>deleteproduct', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({idx: id})})
+          req('<?= BASE; ?>deleteproduct', JSON.stringify({idx: id}), {'Content-Type': 'application/json'})
             .then(response => {
               if(!response.ok) {
-                throw({title: 'Gagal', text: 'Koneksi Gagal', icon: 'Error'});
+                swal('Gagal','Gagal terkoneksi','error');
               }
               return response.json();
             })
             .then(data => {
               if(data.success) {
-                Swal.fire({
-                  title: 'Berhasil',
-                  text: data.msg,
-                  icon: 'success',
-                  showConfirmButton: false,
-                  timer: 1500
-                })
+                swal('Berhasil',data.msg,'success',false,1000);
                 resetEdit();
                 table.ajax.reload();
                 $("#updatemodal").modal("hide");
               } else {
-                throw({title: 'Gagal', text: data.msg, icon: 'Error'});
+                swal('Gagal',data.msg,'error');
               }
             })
-            .catch(err => {
-              Swal.fire({title: err.title, text: err.text, icon: err.icon});
-            })
+            .catch(err => console.error('Error caught: ', err));
         }
       })
     }

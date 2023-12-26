@@ -1,0 +1,34 @@
+ERROR - 2023-12-25 10:47:16 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'nominasp_4121017'@'localhost' (using password: YES) in C:\wamp64\www\dataproduk-ci4\system\Database\MySQLi\Connection.php:184
+Stack trace:
+#0 C:\wamp64\www\dataproduk-ci4\system\Database\MySQLi\Connection.php(184): mysqli->real_connect('127.0.0.1', 'nominasp_412101...', Object(SensitiveParameterValue), 'nominasp_412101...', 3306, '', 0)
+#1 C:\wamp64\www\dataproduk-ci4\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\wamp64\www\dataproduk-ci4\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\wamp64\www\dataproduk-ci4\app\Models\Mdata.php(18): CodeIgniter\Database\BaseConnection->query('SELECT id, nama...')
+#4 C:\wamp64\www\dataproduk-ci4\app\Controllers\Home.php(10): App\Models\Mdata->getSatuan()
+#5 C:\wamp64\www\dataproduk-ci4\system\CodeIgniter.php(942): App\Controllers\Home->index()
+#6 C:\wamp64\www\dataproduk-ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\wamp64\www\dataproduk-ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\wamp64\www\dataproduk-ci4\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\wamp64\www\dataproduk-ci4\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\wamp64\www\dataproduk-ci4\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\wamp64\www\dataproduk-ci4\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\wamp64\www\dataproduk-ci4\app\Models\Mdata.php(18): CodeIgniter\Database\BaseConnection->query('SELECT id, nama...')
+#3 C:\wamp64\www\dataproduk-ci4\app\Controllers\Home.php(10): App\Models\Mdata->getSatuan()
+#4 C:\wamp64\www\dataproduk-ci4\system\CodeIgniter.php(942): App\Controllers\Home->index()
+#5 C:\wamp64\www\dataproduk-ci4\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\wamp64\www\dataproduk-ci4\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\dataproduk-ci4\index.php(79): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2023-12-25 10:47:16 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Models\Mdata.php(18): CodeIgniter\Database\BaseConnection->query('SELECT id, nama FROM satuan')
+ 3 APPPATH\Controllers\Home.php(10): App\Models\Mdata->getSatuan()
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Home->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
