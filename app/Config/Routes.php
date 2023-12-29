@@ -22,3 +22,4 @@ $routes->post('/api/cari', 'Api::cari');
 $routes->post('/api/hapus',  'Api::hapus');
 $routes->post('/api/edit',  'Api::edit');
 $routes->post('/api/login', 'Api::login');
+$routes->post('/api/kasir', 'Api::kasir');

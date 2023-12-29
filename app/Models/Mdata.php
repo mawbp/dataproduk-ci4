@@ -67,4 +67,11 @@ class Mdata extends Model {
       $dt = db_connect()->query($sql);
       return $dt ? $dt->getResult() : 0;
   }
+
+  public function findCashier($id)
+  {
+    $sql = "SELECT * FROM kasir WHERE id = '$id'";
+    $dt = db_connect()->query($sql);
+    return $dt ? $dt->getResult() : 0;
+  }
 }

@@ -101,4 +101,11 @@ class Api extends BaseController
     $dt = $this->Mdata->updateProduct($id,$nama,$hbeli,$hjual,$satuan,$kategori,$qrcode);
     echo $dt == '1' ? json_encode(["success" => true, "message" => "Produk berhasil diubah"]) : json_encode(["success" => false, "message" => "Produk gagal diubah"]);
   }
+
+  public function kasir()
+  {
+    $id = $this->request->getVar("id");
+    $dt = $this->Mdata->findCashier($id);
+    echo json_encode($dt);
+  }
 }
