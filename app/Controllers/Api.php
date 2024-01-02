@@ -56,7 +56,7 @@ class Api extends BaseController
               }
               if($status == 'Y'){
                   $token = enkripsi($username."|".md5(md5(md5($password))));
-                  echo '{"kode":"1", "pesan":"Login Berhasil", "id":"'. $id .'", "username":"'. $username .'", "nama":"' . $nama . '","token":"' . $token . '" }';
+                  echo '{"kode":"1", "pesan":"Login Berhasil", "id":"'. $id .'", "username":"'. $username .'", "nama":"' . $nama . '", "password":"' . md5(md5(md5($password))) . '", "token":"' . $token . '" }';
               } else {
                   echo '{"kode":"0","pesan":"Login Gagal Status Kasir Tidak Aktif"}';
               }
